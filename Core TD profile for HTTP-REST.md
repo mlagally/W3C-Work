@@ -235,7 +235,10 @@ loc_height | js_number  | Text string representation of height as defined in ann
 loc_depth | js_number  | Text string representation of depth as defined in annex H of ISO-6709
 
 If a location is provided, loc_latitude and loc_longitude MUST be present. Only one of loc_altitude,
-loc_height and loc_depth MAY be present. 
+loc_height and loc_depth MAY be present. The use of loc_altitude is NOT RECOMMENDED, since it refers to
+the *mean sea level*, which is not a globally unique reference point.
+
+> Note: See https://www.science20.com/news_articles/what_happens_bridge_when_one_side_uses_mediterranean_sea_level_and_another_north_sea-121600 for a justification why loc_altitude is problematic.
 
 ### Properties
 
