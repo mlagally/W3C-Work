@@ -213,10 +213,10 @@ To provide minimum interoperability the following metadata fields MUST be contai
  base  | uri_type | 
 manufacturer | js_string  | 
 modelNumber | js_string  | 
-deviceDescription |  js_string | human-readable description
-deviceCreated | js_date  | 
-deviceLastModified | js_date  | 
-deviceUserLastModified | js_string | 
+description |  js_string | human-readable description
+created | js_date  | 
+lastModified | js_date  | 
+userLastModified | js_string | 
 security | array of SecurityScheme
 
 It is RECOMMENDED to use the value "Unknown" for strings, where the value cannot be determined. For unknown dates, use of the value "xxx" is RECOMMENDED.
@@ -230,9 +230,12 @@ hardwareRevision | js_string  |
 softwareRevision | js_string |
 loc_latitude | js_number  | Text string representation of latitude as defined in annex H of ISO-6709
 loc_longitude | js_number  | Text string representation of longitude as defined in annex H of ISO-6709 
+loc_altitude | js_number  | Text string representation of altitude as defined in annex H of ISO-6709
 loc_height | js_number  | Text string representation of height as defined in annex H of ISO-6709
+loc_depth | js_number  | Text string representation of depth as defined in annex H of ISO-6709
 
-If a location is provided, all three location MUST be present.
+If a location is provided, loc_latitude and loc_longitude MUST be present. Only one of loc_altitude,
+loc_height and loc_depth MAY be present. 
 
 ### Properties
 
