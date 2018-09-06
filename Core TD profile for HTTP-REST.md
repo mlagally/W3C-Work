@@ -84,8 +84,9 @@ It is RECOMMENDED to include the following fields:
 
  key     |  type         | remarks 
 ----------|---------------|---------
-author | uri_type | RECOMMENDED to use a mailto  
-userLastModified | uri_type | 
+author | uri_type | RECOMMENDED to use a mailto URI  
+createdBy | uri_type | RECOMMENDED to use a mailto URI or the link to a support website
+lastModifiedBy | uri_type | RECOMMENDED to use a mailto URI or the link to a support website
 
 ##### Recommended practice:
 
@@ -102,7 +103,7 @@ The following property fields MUST be contained in an *Interface TD*:
 description | js_string   | human readable description
 type | js_string | one of "boolean", "string", "number", "integer". The type values "object", "array" or "null" SHOULD NOT be used. If they are present, they MUST be treated as strings.
 
-A property is represented as a JSON object with the key name.
+A property is represented as a JSON object with the object key *name*.
 
 It is RECOMMENDED to include the following fields:
 
@@ -111,12 +112,19 @@ key     |  type         | constraints
  writable | js_boolean | If this key is not present, the default value is false
  unit | js_string | measurement unit of the property, such as C/F/K for temperatures, dB, lux, ...
 
-The following fields may be included for properties of the type number and integer:
+> Note: *unit* could be used for more than numeric type,e.g. a string value with binary or hex data ("0xCAFEBABE", "0b01000010"),
+where the unit is  "hex" or "binary", to indicate how the value should be interpreted.
+
+
+
+The following fields MAY be included for properties of the type number and integer:
 
 key     |  type         | constraints  
 ----------|---------------|------
 minimum | js_number | minimum <= maximum
 maximum | js_number | minimum <= maximum
+
+These fields MAY be used together or only one of them MAY be contained. 
  
 The following fields that are defined in the DataSchema MUST NOT be included in an interface description conforming to the core profile:
 
@@ -213,6 +221,7 @@ To provide minimum interoperability the following metadata fields MUST be contai
  base  | uri_type | 
 manufacturer | js_string  | 
 modelNumber | js_string  | 
+serialNumber | js_string |
 description |  js_string | human-readable description
 created | js_date  | 
 lastModified | js_date  | 
@@ -323,5 +332,5 @@ js_date = \<a valid ECMAScript date as defined in chapter '20.3.1.16 Date Time S
 #### Open Issues
 
 - finalize async and sync actions when TD spec is clear
-- define event payload mapping once binding spec handles webhools, long poll and SSE
+- define event payload mapping once binding spec handles webhooks, long poll and SSE
 - Examples
