@@ -288,7 +288,7 @@ Since the relations of a link are currently undefined, the core specification do
 
 The core profile defines a subset of the security schemes that can be implemented on resource constrained devices. A security scheme MUST be defined at the thing or interface level. It is applied to an interface as a whole or to the entire thing. 
 
-The set of required security schemes will be determined after the online plug fest. 
+The set of required security schemes will be based on the plugfest results. 
 
 Candidates include:
 
